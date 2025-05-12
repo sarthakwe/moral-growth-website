@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,7 +14,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 221.2 83.2% 53.3%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -30,9 +31,9 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 221.2 83.2% 53.3%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -96,6 +97,61 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-blue to-brand-purple bg-clip-text text-transparent;
+  }
+  
+  .feature-card {
+    @apply bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100;
+  }
+  
+  .button-primary {
+    @apply bg-brand-blue text-white px-6 py-3 rounded-full flex items-center space-x-2 hover:bg-blue-600 transition-all duration-300 shadow-sm hover:shadow-md;
+  }
+  
+  .button-secondary {
+    @apply bg-brand-green text-white px-6 py-3 rounded-full flex items-center space-x-2 hover:bg-green-600 transition-all duration-300 shadow-sm hover:shadow-md;
+  }
+  
+  .button-outline {
+    @apply border-2 border-brand-blue text-brand-blue px-6 py-3 rounded-full flex items-center space-x-2 hover:bg-brand-blue/5 transition-all duration-300;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-display font-bold mb-4;
+  }
+  
+  .section-subtitle {
+    @apply text-xl text-gray-600 max-w-2xl mx-auto;
+  }
+}
+
+@font-face {
+  font-family: 'Inter var';
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url("https://rsms.me/inter/font-files/Inter-roman.var.woff2?v=3.19") format("woff2");
+}
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('https://cdn.jsdelivr.net/gh/draekien-industries/clash-display-variable@2c58cb6c187b8b8afc80f6a709f5ebcbd256b31c/fonts/ClashDisplay-Variable.woff2') format('woff2');
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
 }
